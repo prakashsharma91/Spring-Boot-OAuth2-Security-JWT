@@ -1,0 +1,25 @@
+spring:
+    application:
+        name: resource-server
+    datasource: 
+        driverClassName: com.mysql.jdbc.Driver
+        url: "jdbc:mysql://localhost:3306/userservice?autoreconnect=true"
+        password: "NewPassword"
+        username: "root"
+        testOnBorrow: true
+        testWhileIdle: true
+        timeBetweenEvictionRunsMillis: 60000
+        minEvictableIdleTimeMillis: 30000
+        validationQuery: SELECT 1
+        max-active: 15
+        max-idle: 10
+        max-wait: 8000
+server:
+  port: 8000
+  
+security:
+    oauth2:
+        resource:
+            filter-order: 3 
+            jwt: 
+                key-value: -----BEGIN PUBLIC KEY-----MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAoFKb1BrgPtTmvr6HzTI+kV1rrFM4OXHbn4uSyC7dnc1s4+oHO460WFrC75IoJfJKBZk6R6x8XJuxTXqDsEOImp/0VJAlgSbD22OEPJsvwpEyiJiP7LhhOddXRa79t2mcXoTYCF8uQIk//YdidV4NvV0IXYP7LC+9QoitXOMmrM/YEVOkPlXqxnfWdALKG7hhQcHcFW5FmFML1K0VjB0EUuYZyUXEJ1SAVRGl884TPKRqOv8m353FYVrbwTSLoBTTsSheHf4x6W88tKEgfVgPEr6jDapYZaXJVccIzTL2yGzEeqAM6YoD4DEHmB/oOewJPUdPsmRax2iovFHYrQk34QIDAQAB-----END PUBLIC KEY-----
